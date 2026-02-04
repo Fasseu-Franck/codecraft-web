@@ -1,0 +1,174 @@
+/* Basé sur guide-installation-shadcn-ui.md et codecraft-style.md */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Codecraft Design System - Using Indigo Velvet as primary, Frozen Water as accent */
+:root {
+  /* Base colors - Light mode */
+  --background: #ffffff;
+  --foreground: #0d091b;
+  
+  /* Card */
+  --card: #ffffff;
+  --card-foreground: #0d091b;
+  
+  /* Popover */
+  --popover: #ffffff;
+  --popover-foreground: #0d091b;
+  
+  /* Primary - Indigo Velvet 500 */
+  --primary: #5b3ec1;
+  --primary-foreground: #ffffff;
+  
+  /* Secondary - Light gray */
+  --secondary: #efecf9;
+  --secondary-foreground: #5b3ec1;
+  
+  /* Muted */
+  --muted: #f6f6f8;
+  --muted-foreground: #6b7280;
+  
+  /* Accent - Frozen Water 500 */
+  --accent: #00ff84;
+  --accent-foreground: #002412;
+  
+  /* Destructive */
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  /* Border */
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #5b3ec1;
+  
+  /* Radius */
+  --radius: 0.625rem;
+
+  /* Codecraft Brand Colors */
+  --color-frozen-water-50: #e5fff3;
+  --color-frozen-water-100: #ccffe6;
+  --color-frozen-water-200: #99ffce;
+  --color-frozen-water-300: #66ffb5;
+  --color-frozen-water-400: #33ff9c;
+  --color-frozen-water-500: #00ff84;
+  --color-frozen-water-600: #00cc69;
+  --color-frozen-water-700: #00994f;
+  --color-frozen-water-800: #006635;
+  --color-frozen-water-900: #00331a;
+  --color-frozen-water-950: #002412;
+
+  --color-indigo-velvet-50: #efecf9;
+  --color-indigo-velvet-100: #ded8f3;
+  --color-indigo-velvet-200: #bdb2e6;
+  --color-indigo-velvet-300: #9c8bda;
+  --color-indigo-velvet-400: #7c65cd;
+  --color-indigo-velvet-500: #5b3ec1;
+  --color-indigo-velvet-600: #49329a;
+  --color-indigo-velvet-700: #362574;
+  --color-indigo-velvet-800: #24194d;
+  --color-indigo-velvet-900: #120c27;
+  --color-indigo-velvet-950: #0d091b;
+
+  --color-soft-cyan-500: #1be4de;
+  --color-light-green-500: #43f906;
+}
+
+.dark {
+  --background: #0d091b;
+  --foreground: #efecf9;
+  
+  --card: #120c27;
+  --card-foreground: #efecf9;
+  
+  --popover: #120c27;
+  --popover-foreground: #efecf9;
+  
+  --primary: #7c65cd;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #24194d;
+  --secondary-foreground: #efecf9;
+  
+  --muted: #24194d;
+  --muted-foreground: #9c8bda;
+  
+  --accent: #00cc69;
+  --accent-foreground: #ffffff;
+  
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  
+  --border: #362574;
+  --input: #362574;
+  --ring: #7c65cd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Codecraft palette for Tailwind */
+  --color-frozen-water-50: var(--color-frozen-water-50);
+  --color-frozen-water-500: var(--color-frozen-water-500);
+  --color-frozen-water-600: var(--color-frozen-water-600);
+  --color-indigo-velvet-50: var(--color-indigo-velvet-50);
+  --color-indigo-velvet-500: var(--color-indigo-velvet-500);
+  --color-indigo-velvet-600: var(--color-indigo-velvet-600);
+  --color-indigo-velvet-950: var(--color-indigo-velvet-950);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
