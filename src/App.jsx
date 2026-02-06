@@ -7,7 +7,9 @@ import { SigninPage } from "@/src/pages/Signin";
 import { SignupPage } from "@/src/pages/Signup";
 
 // Home page
+// Home page
 import { Home } from "@/src/pages/Home";
+import { HowItWorks } from "@/src/pages/HowItWorks";
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <Routes>
         {/* Landing Page */}
         <Route path="/" element={<Home />} />
+        <Route path="/comment-ca-marche" element={<HowItWorks />} />
 
         {/* Pages d'authentification */}
         <Route path="/inscription" element={<SignupPage />} />

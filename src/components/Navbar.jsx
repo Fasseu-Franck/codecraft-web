@@ -6,10 +6,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  { label: "Accueil", href: "#accueil" },
+  { label: "Accueil", href: "/" },
   { label: "Formations", href: "#formations" },
-  { label: "À propos", href: "#a-propos" },
-  { label: "Comment ça marche", href: "#comment-ca-marche" },
+  { label: "Comment ça marche", href: "/comment-ca-marche" },
   { label: "Contact", href: "#contact" },
 ];
 
