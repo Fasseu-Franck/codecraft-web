@@ -9,40 +9,40 @@
   /* Base colors - Light mode */
   --background: #ffffff;
   --foreground: #0d091b;
-  
+
   /* Card */
   --card: #ffffff;
   --card-foreground: #0d091b;
-  
+
   /* Popover */
   --popover: #ffffff;
   --popover-foreground: #0d091b;
-  
+
   /* Primary - Indigo Velvet 500 */
   --primary: #5b3ec1;
   --primary-foreground: #ffffff;
-  
+
   /* Secondary - Light gray */
   --secondary: #efecf9;
   --secondary-foreground: #5b3ec1;
-  
+
   /* Muted */
   --muted: #f6f6f8;
   --muted-foreground: #6b7280;
-  
+
   /* Accent - Frozen Water 500 */
   --accent: #00ff84;
   --accent-foreground: #002412;
-  
+
   /* Destructive */
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  
+
   /* Border */
   --border: #e5e7eb;
   --input: #e5e7eb;
   --ring: #5b3ec1;
-  
+
   /* Radius */
   --radius: 0.625rem;
 
@@ -78,28 +78,28 @@
 .dark {
   --background: #0d091b;
   --foreground: #efecf9;
-  
+
   --card: #120c27;
   --card-foreground: #efecf9;
-  
+
   --popover: #120c27;
   --popover-foreground: #efecf9;
-  
+
   --primary: #7c65cd;
   --primary-foreground: #ffffff;
-  
+
   --secondary: #24194d;
   --secondary-foreground: #efecf9;
-  
+
   --muted: #24194d;
   --muted-foreground: #9c8bda;
-  
+
   --accent: #00cc69;
   --accent-foreground: #ffffff;
-  
+
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  
+
   --border: #362574;
   --input: #362574;
   --ring: #7c65cd;
@@ -129,7 +129,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  
+
   /* Codecraft palette for Tailwind */
   --color-frozen-water-50: var(--color-frozen-water-50);
   --color-frozen-water-500: var(--color-frozen-water-500);
@@ -146,7 +146,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+    font-family:
+      "Public Sans",
+      system-ui,
+      -apple-system,
+      sans-serif;
   }
 }
 

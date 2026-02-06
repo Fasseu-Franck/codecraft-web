@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
   { label: "Formations", href: "#formations" },
+  { label: "À propos", href: "#a-propos" },
   { label: "Comment ça marche", href: "#comment-ca-marche" },
   { label: "Contact", href: "#contact" },
 ];
@@ -52,11 +53,16 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button - Droite */}
-          <div className="hidden md:block">
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-4">
             <Link to="/connexion">
-              <Button variant="default" size="sm">
+              <Button variant="ghost" size="sm" className="rounded-full">
                 Connexion
+              </Button>
+            </Link>
+            <Link to="/inscription">
+              <Button variant="default" size="sm" className="rounded-full">
+                S'inscrire
               </Button>
             </Link>
           </div>
@@ -77,11 +83,11 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
-          <div className="px-4 py-4 space-y-3">
+        <div className="absolute top-full left-0 right-0 mt-2 p-4 bg-background/95 backdrop-blur-md rounded-2xl border border-border shadow-xl md:hidden mx-4 animate-in slide-in-from-top-4 fade-in duration-200">
+          <div className="space-y-3 flex flex-col items-center">
             {navLinks.map((link) => (
               <a
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 className="block py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -89,11 +95,18 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Link to="/connexion">
-              <Button variant="default" className="w-full mt-4">
-                Connexion
-              </Button>
-            </Link>
+            <div className="flex flex-col w-full gap-2 mt-2">
+              <Link to="/connexion" className="w-full">
+                <Button variant="outline" className="w-full rounded-full">
+                  Connexion
+                </Button>
+              </Link>
+              <Link to="/inscription" className="w-full">
+                <Button variant="default" className="w-full rounded-full">
+                  S'inscrire
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       )}

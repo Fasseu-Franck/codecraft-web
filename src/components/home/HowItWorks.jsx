@@ -5,7 +5,6 @@ const steps = [
   {
     number: '01',
     icon: PenLine,
-    emoji: '✍️',
     title: 'Créez votre compte gratuitement',
     description: 'Inscription en 2 minutes. Renseignez vos objectifs d\'apprentissage et votre niveau actuel pour recevoir des recommandations personnalisées.',
     detail: 'Temps : 2 minutes',
@@ -13,7 +12,6 @@ const steps = [
   {
     number: '02',
     icon: GraduationCap,
-    emoji: '🎓',
     title: 'Sélectionnez votre parcours',
     description: 'Choisissez parmi plus de 30 parcours de formation : développement web, JavaScript, React, Python... Du débutant à l\'expert.',
     detail: 'Populaires : HTML/CSS, JavaScript, React',
@@ -21,7 +19,6 @@ const steps = [
   {
     number: '03',
     icon: Code2,
-    emoji: '💻',
     title: 'Codez directement dans la plateforme',
     description: 'Suivez les instructions du projet, écrivez votre code dans l\'éditeur intégré et voyez le résultat en temps réel.',
     detail: 'Format : 20% Théorie / 80% Pratique',
@@ -29,7 +26,6 @@ const steps = [
   {
     number: '04',
     icon: MessageCircle,
-    emoji: '💬',
     title: 'Échangez avec la communauté',
     description: 'Bloqué sur un exercice ? Posez votre question. Maîtrisez un concept ? Aidez les autres. L\'entraide renforce l\'apprentissage.',
     detail: 'Réponse moyenne : < 30 minutes',
@@ -37,7 +33,6 @@ const steps = [
   {
     number: '05',
     icon: BarChart3,
-    emoji: '📊',
     title: 'Suivez votre évolution',
     description: 'Tableau de bord personnalisé, projets complétés, compétences acquises, badges débloqués... Visualisez votre progression.',
     detail: 'Gamification intelligente',
@@ -50,6 +45,9 @@ export function HowItWorks() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Titre de section */}
         <div className="text-center mb-16">
+        <span className="inline-block px-4 py-1.5 bg-[var(--color-indigo-velvet-100)] text-[var(--color-indigo-velvet-800)] rounded-full text-sm font-medium mb-4">
+            Comment Codecraft fonctionne
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Votre parcours d'apprentissage en{' '}
             <span className="text-[var(--color-indigo-velvet-500)]">5 étapes simples</span>

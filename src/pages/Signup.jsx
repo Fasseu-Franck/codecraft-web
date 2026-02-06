@@ -48,17 +48,17 @@ export function SignupPage() {
         <Card className="bg-indigo-velvet-900 border-indigo-velvet-800">
           <CardHeader className="text-center pb-2">
             <CardTitle className="text-2xl font-bold text-white">
-              Créer un compte
+              Créer votre compte
             </CardTitle>
             <CardDescription className="text-white/60">
-              Entrez vos informations pour créer votre compte
+              Entrez vos informations pour créer votre espace
             </CardDescription>
           </CardHeader>
 
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
               {/* Email */}
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <Label htmlFor="email" className="text-white">
                   Email
                 </Label>
@@ -80,7 +80,7 @@ export function SignupPage() {
               {/* Mot de passe et Confirmation côte à côte */}
               <div className="grid grid-cols-2 gap-4">
                 {/* Mot de passe */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <Label htmlFor="password" className="text-white">
                     Mot de passe
                   </Label>
@@ -109,7 +109,7 @@ export function SignupPage() {
                 </div>
 
                 {/* Confirmer mot de passe */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <Label htmlFor="confirmPassword" className="text-white">
                     Confirmer
                   </Label>
@@ -143,7 +143,10 @@ export function SignupPage() {
               {/* Info mot de passe */}
               <div className="flex items-center gap-2 text-white/50 text-xs">
                 <Info className="h-4 w-4" />
-                <span>Le mot de passe doit contenir au moins 8 caractères</span>
+                <span>
+                  Le mot de passe doit contenir au moins 8 caractères et être
+                  différent de l'email
+                </span>
               </div>
 
               {/* Bouton principal */}
@@ -162,7 +165,7 @@ export function SignupPage() {
                 <span className="w-full border-t border-(--color-indigo-velvet-700)" />
               </div>
               <div className="relative flex justify-center text-xs">
-                <span className="bg-(--color-indigo-velvet-900) px-2 text-white/50">
+                <span className="bg-[var(--color-indigo-velvet-900)] px-2 text-white/50">
                   Ou continuer avec
                 </span>
               </div>

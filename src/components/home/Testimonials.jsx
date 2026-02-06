@@ -31,6 +31,9 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Titre de section */}
         <div className="text-center mb-16">
+        <span className="inline-block px-4 py-1.5 bg-[var(--color-indigo-velvet-100)] text-[var(--color-indigo-velvet-800)] rounded-full text-sm font-medium mb-4">
+            Témoignages
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Ils ont transformé leur apprentissage avec{' '}
             <span className="text-[var(--color-indigo-velvet-500)]">Codecraft</span>

@@ -1,4 +1,3 @@
-// Basé sur task-2.md - Page Connexion
 import logo from "@/src/assets/logo.png";
 import { Button } from "@/src/components/ui/button";
 import {
@@ -33,7 +32,7 @@ export function SigninPage() {
   const isFormValid = email && password;
 
   return (
-    <div className="min-h-screen bg-[var(--color-indigo-velvet-950)] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-indigo-velvet-950 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="flex justify-center mb-8">
@@ -43,20 +42,20 @@ export function SigninPage() {
         </div>
 
         {/* Card */}
-        <Card className="bg-[var(--color-indigo-velvet-900)] border-[var(--color-indigo-velvet-800)]">
+        <Card className="bg-(--color-indigo-velvet-900) border-[var(--color-indigo-velvet-800)]">
           <CardHeader className="text-center pb-2">
             <CardTitle className="text-2xl font-bold text-white">
-              Bon retour parmi nous
+              Bon retour dans votre espace
             </CardTitle>
             <CardDescription className="text-white/60">
-              Connectez-vous à votre compte
+              Connectez-vous à votre compte et poursuivez votre apprentissage
             </CardDescription>
           </CardHeader>
 
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Email */}
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <Label htmlFor="email" className="text-white">
                   Email
                 </Label>
@@ -72,7 +71,7 @@ export function SigninPage() {
               </div>
 
               {/* Mot de passe */}
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password" className="text-white">
                     Mot de passe
@@ -88,7 +87,7 @@ export function SigninPage() {
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="••••••••"
+                    placeholder="•••••••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
@@ -114,7 +113,7 @@ export function SigninPage() {
                 disabled={!isFormValid || isLoading}
                 className="w-full bg-white text-[var(--color-indigo-velvet-950)] hover:bg-white/90 font-medium"
               >
-                {isLoading ? "Connexion en cours..." : "Se connecter"}
+                {isLoading ? "Connexion en cours..." : "Se connecter !"}
               </Button>
             </form>
 

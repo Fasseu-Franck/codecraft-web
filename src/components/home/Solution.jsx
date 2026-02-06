@@ -4,21 +4,18 @@ import { BookOpen, Target, Users } from 'lucide-react'
 const solutions = [
   {
     icon: Target,
-    emoji: '🎯',
     title: 'Tout au même endroit',
     description: 'Éditeur de code, prévisualisation, cours, projets, corrections... Tout est centralisé dans une interface intuitive. Plus besoin de jongler entre 10 outils.',
     benefit: 'Concentrez-vous sur l\'apprentissage, pas sur l\'organisation',
   },
   {
     icon: BookOpen,
-    emoji: '📚',
     title: 'Parcours structurés et progressifs',
     description: 'Plus de 30 parcours de formation conçus par des experts, avec des projets pratiques qui suivent une progression logique. Chaque concept est appliqué immédiatement dans du code réel.',
     benefit: 'Progressez rapidement avec une méthode éprouvée',
   },
   {
     icon: Users,
-    emoji: '👥',
     title: 'Apprenez ensemble, progressez plus vite',
     description: 'Posez vos questions, partagez vos solutions, aidez les autres apprenants. L\'entraide est au cœur de Codecraft avec un système de collaboration pensé pour l\'apprentissage.',
     benefit: 'Restez motivé grâce à une communauté active',
@@ -31,6 +28,9 @@ export function Solution() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Titre de section */}
         <div className="text-center mb-16">
+        <span className="inline-block px-4 py-1.5 bg-[var(--color-indigo-velvet-100)] text-[var(--color-indigo-velvet-800)] rounded-full text-sm font-medium mb-4">
+            Comment Codecraft résout ces problèmes
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Une plateforme pensée pour{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-indigo-velvet-500)] to-[var(--color-frozen-water-500)]">
