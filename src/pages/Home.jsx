@@ -16,34 +16,34 @@ import { Navbar } from "@/src/components/Navbar";
 export function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* 1️⃣ Barre de navigation */}
+      {/* Barre de navigation */}
       <Navbar />
 
-      {/* 2️⃣ Hero Section */}
+      {/* Hero Section */}
       <Hero />
 
-      {/* 3️⃣ Section Problème */}
+      {/* Section Problème */}
       <Problem />
 
-      {/* 4️⃣ Section Solution */}
+      {/* Section Solution */}
       <Solution />
 
-      {/* 5️⃣ Comment ça marche */}
+      {/* Comment ça marche */}
       <HowItWorks />
 
-      {/* 6️⃣ Pour les centres de formation */}
+      {/* Pour les centres de formation */}
       <TrainingCenters />
 
-      {/* 7️⃣ Témoignages */}
+      {/* Témoignages */}
       <Testimonials />
 
-      {/* 8️⃣ FAQ */}
+      {/* FAQ */}
       <FAQ />
 
-      {/* 9️⃣ CTA Final */}
+      {/* CTA Final */}
       <FinalCTA />
 
-      {/* 🔟 Footer */}
+      {/* Footer */}
       <Footer />
     </div>
   );

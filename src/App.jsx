@@ -8,6 +8,7 @@ import { SignupPage } from "@/src/pages/Signup";
 
 
 // Home page
+import { Contact } from "@/src/pages/Contact";
 import { Home } from "@/src/pages/Home";
 import { HowItWorks } from "@/src/pages/HowItWorks";
 
@@ -19,13 +20,14 @@ function App() {
         <Route path="/" element={<Home />} />
 
         {/* Pages d'authentification */}
-        <Route path="/inscription" element={<SignupPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/connexion" element={<SigninPage />} />
-        <Route path="/signin" element={<SigninPage />} />
+        <Route path="/register" element={<SignupPage />} />
+        <Route path="/login" element={<SigninPage />} />
 
         {/* Pages comment ça marche */}
         <Route path="/comment-ca-marche" element={<HowItWorks />} />
+
+        {/* Page Contact */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

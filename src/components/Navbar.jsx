@@ -8,8 +8,10 @@ import { Link } from "react-router-dom";
 const navLinks = [
   { label: "Accueil", href: "/" },
   { label: "Formations", href: "#formations" },
+  { label: "À propos", href: "#about" },
+  { label: "Tarifs", href: "#pricing" },
   { label: "Comment ça marche", href: "/comment-ca-marche" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -28,7 +30,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm"
+          ? "bg-background/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -41,25 +43,30 @@ export function Navbar() {
 
           {/* Desktop Navigation - Centré */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isExternal = link.href.startsWith("#");
+              const Component = isExternal ? "a" : Link;
+              return (
+                <Component
+                  key={link.href}
+                  href={isExternal ? link.href : undefined}
+                  to={!isExternal ? link.href : undefined}
+                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Component>
+              );
+            })}
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Link to="/connexion">
+            <Link to="/login">
               <Button variant="ghost" size="sm" className="rounded-full">
                 Connexion
               </Button>
             </Link>
-            <Link to="/inscription">
+            <Link to="/register">
               <Button variant="default" size="sm" className="rounded-full">
                 S'inscrire
               </Button>
@@ -84,23 +91,28 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 mt-2 p-4 bg-background/95 backdrop-blur-md rounded-2xl border border-border shadow-xl md:hidden mx-4 animate-in slide-in-from-top-4 fade-in duration-200">
           <div className="space-y-3 flex flex-col items-center">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="block py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isExternal = link.href.startsWith("#");
+              const Component = isExternal ? "a" : Link;
+              return (
+                <Component
+                  key={link.label}
+                  href={isExternal ? link.href : undefined}
+                  to={!isExternal ? link.href : undefined}
+                  className="block py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Component>
+              );
+            })}
             <div className="flex flex-col w-full gap-2 mt-2">
-              <Link to="/connexion" className="w-full">
+              <Link to="/login" className="w-full">
                 <Button variant="outline" className="w-full rounded-full">
                   Connexion
                 </Button>
               </Link>
-              <Link to="/inscription" className="w-full">
+              <Link to="/register" className="w-full">
                 <Button variant="default" className="w-full rounded-full">
                   S'inscrire
                 </Button>

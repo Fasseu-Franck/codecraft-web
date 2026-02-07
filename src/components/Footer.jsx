@@ -16,9 +16,9 @@ const footerLinks = {
   resources: {
     title: "Ressources",
     links: [
+      { label: "À propos", href: "#about" },
       { label: "Comment ça marche", href: "#comment-ca-marche" },
       { label: "Blog", href: "#" },
-      { label: "Documentation", href: "#" },
       { label: "Centre d'aide", href: "#" },
       { label: "Communauté", href: "#" },
     ],
@@ -26,11 +26,10 @@ const footerLinks = {
   company: {
     title: "Entreprise",
     links: [
-      { label: "À propos", href: "#" },
+      { label: "À propos", href: "#about" },
       { label: "Pour les centres de formation", href: "#" },
-      { label: "Tarifs", href: "#" },
+      { label: "Tarifs", href: "#pricing" },
       { label: "Contact", href: "#contact" },
-      { label: "Nous rejoindre", href: "#" },
     ],
   },
   legal: {
