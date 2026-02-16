@@ -1,13 +1,15 @@
-// Basé sur task-1.md - Section 7: TÉMOIGNAGES
+// Basé sur task-1.md - Section 7: TÉMOIGNAGES — redesign avec titres, petites étoiles et photos
 import { Star } from "lucide-react";
 
 const testimonials = [
   {
     name: "Sarah Martinez",
     role: "Reconversion professionnelle",
-    avatar: "SM",
+    title: "Un parcours qui a changé ma carrière",
+    avatar:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
     quote:
-      "Après 6 mois d'apprentissage en solitaire avec des résultats décevants, Codecraft a tout changé. L'environnement collaboratif m'a permis de débloquer mes incompréhensions rapidement. En 3 mois, j'ai créé 5 projets concrets et décroché mon premier CDI en tant que développeuse junior.",
+      "Après 6 mois d'apprentissage en solitaire avec des résultats décevants, Codecraft a tout changé. L'environnement collaboratif m'a permis de débloquer mes incompréhensions. En 3 mois, j'ai créé 5 projets concrets et décroché mon premier CDI.",
     highlights: [
       "Progression rapide",
       "Environnement d'entraide",
@@ -17,7 +19,9 @@ const testimonials = [
   {
     name: "Thomas Dubois",
     role: "Étudiant en école d'informatique",
-    avatar: "TD",
+    title: "Enfin la pratique dont j'avais besoin",
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
     quote:
       "Les cours de la fac étaient trop théoriques. Avec Codecraft, j'ai enfin pu pratiquer sur de vrais projets et comprendre comment les concepts s'appliquent concrètement. La communauté est incroyablement active et bienveillante.",
     highlights: [
@@ -29,9 +33,11 @@ const testimonials = [
   {
     name: "Amadou Konaté",
     role: "Formateur en centre de formation",
-    avatar: "AK",
+    title: "Un vrai game-changer pour nos formations",
+    avatar:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face",
     quote:
-      "Nous avons intégré Codecraft dans notre parcours développeur web. L'engagement des apprenants a explosé : +45% de taux de complétion. Le tableau de bord nous permet d'intervenir rapidement quand quelqu'un rencontre des difficultés. Un vrai game-changer.",
+      "Nous avons intégré Codecraft dans notre parcours développeur web. L'engagement des apprenants a explosé : +45% de taux de complétion. Le tableau de bord nous permet d'intervenir rapidement quand quelqu'un est en difficulté.",
     highlights: [
       "Taux de complétion amélioré",
       "Suivi en temps réel",
@@ -62,18 +68,23 @@ export function Testimonials() {
               key={index}
               className="bg-background rounded-2xl p-8 border border-border shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
+              {/* Étoiles — petite taille */}
+              <div className="flex gap-0.5 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="h-5 w-5 fill-frozen-water-500 text-frozen-water-500"
+                    className="h-4 w-4 fill-amber-400 text-amber-400"
                   />
                 ))}
               </div>
 
-              {/* Quote */}
-              <p className="text-foreground/80 leading-relaxed mb-6 text-sm">
+              {/* Titre du témoignage */}
+              <h3 className="font-semibold text-foreground mb-3">
+                {testimonial.title}
+              </h3>
+
+              {/* Citation */}
+              <p className="text-foreground/70 leading-relaxed mb-6 text-sm">
                 "{testimonial.quote}"
               </p>
 
@@ -89,16 +100,18 @@ export function Testimonials() {
                 ))}
               </div>
 
-              {/* Author */}
+              {/* Auteur avec photo */}
               <div className="flex items-center gap-3 pt-6 border-t border-border">
-                <div className="w-12 h-12 rounded-full bg-linear-to-br from-indigo-velvet-500 to-frozen-water-500 flex items-center justify-center text-white font-semibold">
-                  {testimonial.avatar}
-                </div>
+                <img
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
+                  className="w-10 h-10 rounded-full object-cover"
+                />
                 <div>
-                  <p className="font-semibold text-foreground">
+                  <p className="font-semibold text-sm text-foreground">
                     {testimonial.name}
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     {testimonial.role}
                   </p>
                 </div>

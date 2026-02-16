@@ -1,4 +1,4 @@
-// Basé sur task-1.md - Section 10: FOOTER
+// Basé sur task-1.md - Section 10: FOOTER — avec animations hover
 import logo from "@/src/assets/logo.png";
 import { Github, Linkedin, Twitter, Youtube } from "lucide-react";
 
@@ -17,7 +17,7 @@ const footerLinks = {
     title: "Ressources",
     links: [
       { label: "À propos", href: "#about" },
-      { label: "Comment ça marche", href: "#comment-ca-marche" },
+      { label: "Comment ça marche", href: "/comment-ca-marche" },
       { label: "Blog", href: "#" },
       { label: "Centre d'aide", href: "#" },
       { label: "Communauté", href: "#" },
@@ -27,9 +27,9 @@ const footerLinks = {
     title: "Entreprise",
     links: [
       { label: "À propos", href: "#about" },
-      { label: "Pour les centres de formation", href: "#" },
-      { label: "Tarifs", href: "#pricing" },
-      { label: "Contact", href: "#contact" },
+      { label: "Pour les centres de formation", href: "/tarifs" },
+      { label: "Tarifs", href: "/tarifs" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   legal: {
@@ -52,10 +52,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer
-      id="contact"
-      className="bg-[var(--color-indigo-velvet-950)] text-white"
-    >
+    <footer id="contact" className="bg-indigo-velvet-950 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Colonne 1 - À propos */}
@@ -77,7 +74,7 @@ export function Footer() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--color-frozen-water-500)] hover:text-[var(--color-frozen-water-950)] transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-frozen-water-500 hover:text-(--color-frozen-water-950) transition-all duration-300 hover:scale-110"
                 >
                   <social.icon className="h-5 w-5" />
                 </a>
@@ -94,7 +91,7 @@ export function Footer() {
                   <li key={i}>
                     <a
                       href={link.href}
-                      className="text-sm text-white/60 hover:text-[var(--color-frozen-water-500)] transition-colors"
+                      className="text-sm text-white/60 hover:text-frozen-water-500 hover:translate-x-1 inline-block transition-all duration-300"
                     >
                       {link.label}
                     </a>
@@ -111,7 +108,7 @@ export function Footer() {
             © 2025 Codecraft. Tous droits réservés.
           </p>
           <p className="text-sm text-white/40">
-            La solution pensé pour les développeurs de demain !
+            La solution pensée pour les développeurs de demain !
           </p>
         </div>
       </div>

@@ -27,14 +27,14 @@ export function FinalCTA() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <Button
             size="xl"
-            className="bg-[var(--color-frozen-water-500)] text-[var(--color-frozen-water-950)] hover:bg-[var(--color-frozen-water-400)] shadow-lg hover:shadow-xl"
+            className="py-3 px-4 bg-frozen-water-500 text-(--color-frozen-water-950) hover:bg-[var(--color-frozen-water-400)] shadow-lg hover:shadow-xl"
           >
             Commencer gratuitement
           </Button>
           <Button
             variant="outline"
             size="xl"
-            className="border-white/30 text-white hover:bg-white/10"
+            className="py-3 px-4 border-white/30 text-white hover:bg-white/10"
           >
             Réserver une démo
           </Button>

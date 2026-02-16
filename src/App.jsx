@@ -11,6 +11,7 @@ import { SignupPage } from "@/src/pages/Signup";
 import { Contact } from "@/src/pages/Contact";
 import { Home } from "@/src/pages/Home";
 import { HowItWorks } from "@/src/pages/HowItWorks";
+import { Pricing } from "@/src/pages/Pricing";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
 
           {/* Pages comment ça marche */}
           <Route path="/comment-ca-marche" element={<HowItWorks />} />
+
+          {/* Page Tarification */}
+          <Route path="/tarifs" element={<Pricing />} />
 
           {/* Page Contact */}
           <Route path="/contact" element={<Contact />} />

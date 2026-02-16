@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Accueil", href: "/" },
   { label: "Formations", href: "#formations" },
   { label: "Comment ça marche", href: "/comment-ca-marche" },
-  { label: "Tarifs", href: "#pricing" },
+  { label: "Tarifs", href: "/tarifs" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -51,7 +51,7 @@ export function Navbar() {
                   key={link.href}
                   href={isExternal ? link.href : undefined}
                   to={!isExternal ? link.href : undefined}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors cursor-pointer"
                 >
                   {link.label}
                 </Component>
@@ -62,12 +62,12 @@ export function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <ModeToggle />
-            <Link to="/login">
+            <Link to="/login" className="cursor-pointer">
               <Button variant="ghost" size="sm" className="rounded-full">
                 Connexion
               </Button>
             </Link>
-            <Link to="/register">
+            <Link to="/register" className="cursor-pointer">
               <Button variant="default" size="sm" className="rounded-full">
                 S'inscrire
               </Button>
@@ -78,7 +78,7 @@ export function Navbar() {
           <div className="flex items-center gap-2 md:hidden">
             <ModeToggle />
             <button
-              className="p-2 text-foreground"
+              className="p-2 text-foreground cursor-pointer"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (

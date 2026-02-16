@@ -1,7 +1,7 @@
 // Basé sur task-1.md - Section 2: HERO SECTION
 import heroImage from "@/src/assets/home/Working-Dark.jpg";
 import { Button } from "@/src/components/ui/button";
-import { BookOpen, CheckCircle2, Rocket } from "lucide-react";
+import { CheckCircle2, Rocket, BookOpen } from "lucide-react";
 
 // Stats data (Reverted to original)
 const stats = [
@@ -36,15 +36,15 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mt-4">
-              <Button className="h-14 px-8 rounded-full text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all">
-                <Rocket className="mr-2 h-5 w-5" />
+              <Button className="h-14 px-6 rounded-full text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all">
+                <Rocket className="mr-1 h-5 w-5" />
                 Débuter maintenant
               </Button>
               <Button
                 variant="outline"
-                className="h-14 px-8 rounded-full text-base font-semibold border-2 hover:bg-secondary/20"
+                className="h-14 px-6 rounded-full text-base font-semibold border-2 hover:bg-secondary/20"
               >
-                <BookOpen className="mr-2 h-5 w-5" />
+                <BookOpen className="mr-1 h-5 w-5" />
                 Consulter les parcours
               </Button>
             </div>
