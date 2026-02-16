@@ -1,5 +1,6 @@
 // Basé sur task-1.md - Section 1: BARRE DE NAVIGATION
 import logo from "@/src/assets/logo.png";
+import { ModeToggle } from "@/src/components/mode-toggle";
 import { Button } from "@/src/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -8,9 +9,8 @@ import { Link } from "react-router-dom";
 const navLinks = [
   { label: "Accueil", href: "/" },
   { label: "Formations", href: "#formations" },
-  { label: "À propos", href: "#about" },
-  { label: "Tarifs", href: "#pricing" },
   { label: "Comment ça marche", href: "/comment-ca-marche" },
+  { label: "Tarifs", href: "#pricing" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -61,6 +61,7 @@ export function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
+            <ModeToggle />
             <Link to="/login">
               <Button variant="ghost" size="sm" className="rounded-full">
                 Connexion
@@ -73,17 +74,20 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="flex items-center gap-2 md:hidden">
+            <ModeToggle />
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 

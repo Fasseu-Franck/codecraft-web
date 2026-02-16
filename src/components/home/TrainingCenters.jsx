@@ -63,7 +63,7 @@ export function TrainingCenters() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Titre de section */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 bg-[var(--color-indigo-velvet-100)] text-[var(--color-indigo-velvet-800)] rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 bg-badge-bg text-badge-text rounded-full text-sm font-medium mb-4">
             Pour les professionnels
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -105,7 +105,7 @@ export function TrainingCenters() {
         </div>
 
         {/* Solutions pour les centres */}
-        <div className="bg-gradient-to-br from-[var(--color-indigo-velvet-950)] to-[var(--color-indigo-velvet-900)] rounded-3xl p-8 sm:p-12">
+        <div className="bg-linear-to-br from-indigo-velvet-950 to-(--color-indigo-velvet-900) rounded-3xl p-8 sm:p-12">
           <h3 className="text-xl font-semibold text-white mb-8 text-center">
             Nos solutions pour les centres de formations
           </h3>
@@ -115,14 +115,14 @@ export function TrainingCenters() {
                 key={index}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10"
               >
-                <solution.icon className="h-8 w-8 text-[var(--color-frozen-water-500)] mb-4" />
+                <solution.icon className="h-8 w-8 text-frozen-water-500 mb-4" />
                 <h4 className="font-semibold text-white mb-2">
                   {solution.title}
                 </h4>
                 <p className="text-sm text-white/70 mb-4">
                   {solution.description}
                 </p>
-                <p className="text-sm text-[var(--color-frozen-water-400)] font-medium">
+                <p className="text-sm text-(--color-frozen-water-400) font-medium">
                   ✓ {solution.benefit}
                 </p>
               </div>
@@ -133,14 +133,14 @@ export function TrainingCenters() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-[var(--color-frozen-water-500)] text-[var(--color-frozen-water-950)] hover:bg-[var(--color-frozen-water-900)]"
+              className="bg-frozen-water-500 text-(--color-frozen-water-950) hover:bg-(--color-frozen-water-900)"
             >
               Demander une démo
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-white/30 text-foreground hover:bg-white/10"
+              className="border-white/30 text-white hover:bg-white/10"
             >
               S'inscrire comme centre de formation
             </Button>

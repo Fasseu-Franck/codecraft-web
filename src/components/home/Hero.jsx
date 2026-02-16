@@ -36,7 +36,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mt-4">
-              <Button className="h-14 px-8 rounded-full text-base font-semibold bg-gradient-to-r from-[var(--color-indigo-velvet-500)] to-[var(--color-indigo-velvet-600)] hover:from-[var(--color-indigo-velvet-600)] hover:to-[var(--color-indigo-velvet-700)] shadow-lg hover:shadow-xl transition-all">
+              <Button className="h-14 px-8 rounded-full text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all">
                 <Rocket className="mr-2 h-5 w-5" />
                 Débuter maintenant
               </Button>
@@ -53,7 +53,7 @@ export function Hero() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-border/50">
               {stats.map((stat, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <stat.icon className="h-5 w-5 text-primary flex-shrink-0" />
+                  <stat.icon className="h-5 w-5 text-primary shrink-0" />
                   <span className="text-sm text-foreground/80 text-left">
                     {stat.text}
                   </span>

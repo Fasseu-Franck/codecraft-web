@@ -73,6 +73,13 @@
 
   --color-soft-cyan-500: #1be4de;
   --color-light-green-500: #43f906;
+
+  /* Semantic dark-mode-aware variables */
+  --badge-bg: #ded8f3;
+  --badge-text: #24194d;
+  --card-subtle-bg: #efecf9;
+  --highlight-bg: #e5fff3;
+  --highlight-text: #00994f;
 }
 
 .dark {
@@ -103,6 +110,13 @@
   --border: #362574;
   --input: #362574;
   --ring: #7c65cd;
+
+  /* Semantic dark-mode-aware variables */
+  --badge-bg: #24194d;
+  --badge-text: #bdb2e6;
+  --card-subtle-bg: #120c27;
+  --highlight-bg: #00331a;
+  --highlight-text: #33ff9c;
 }
 
 @theme inline {
@@ -138,6 +152,13 @@
   --color-indigo-velvet-500: var(--color-indigo-velvet-500);
   --color-indigo-velvet-600: var(--color-indigo-velvet-600);
   --color-indigo-velvet-950: var(--color-indigo-velvet-950);
+
+  /* Semantic tokens for dark mode support */
+  --color-badge-bg: var(--badge-bg);
+  --color-badge-text: var(--badge-text);
+  --color-card-subtle: var(--card-subtle-bg);
+  --color-highlight-bg: var(--highlight-bg);
+  --color-highlight-text: var(--highlight-text);
 }
 
 @layer base {
@@ -175,4 +196,16 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
+}
+
+/* Animations subtiles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
