@@ -132,15 +132,9 @@ export function TrainingCenters() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              size="lg"
-              className="bg-frozen-water-500 text-(--color-frozen-water-950) hover:bg-(--color-frozen-water-900)"
-            >
-              Demander une démo
-            </Button>
-            <Button
               variant="outline"
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10"
+              className="text-(--color-frozen-water-950)"
             >
               S'inscrire comme centre de formation
             </Button>

@@ -189,7 +189,7 @@ export function ComparisonTable() {
                       <td className="py-4 px-6 text-center">
                         {renderCell(feature.starter, false)}
                       </td>
-                      <td className="py-4 px-6 text-center bg-primary/[0.03]">
+                      <td className="py-4 px-6 text-center bg-primary/3">
                         {renderCell(feature.premium, true)}
                       </td>
                       <td className="py-4 px-6 text-center">

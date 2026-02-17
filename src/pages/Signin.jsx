@@ -1,4 +1,7 @@
+// Basé sur codecraft-prd.md — Module d'Authentification : Connexion / Déconnexion
+// Conforme au design system (codecraft-style.md) avec support dark/light mode
 import logo from "@/src/assets/logo.png";
+import { ModeToggle } from "@/src/components/mode-toggle";
 import { Button } from "@/src/components/ui/button";
 import {
   Card,
@@ -32,8 +35,18 @@ export function SigninPage() {
   const isFormValid = email && password;
 
   return (
-    <div className="min-h-screen bg-indigo-velvet-950 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    // Utilisation de bg-background et text-foreground pour le support dark/light mode
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 relative">
+      {/* Décorations de fond — Cohérent avec le reste de l'application */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
+
+      {/* Toggle dark/light mode — Positionné en haut à droite */}
+      <div className="absolute top-4 right-4 z-20">
+        <ModeToggle />
+      </div>
+
+      <div className="relative z-10 w-full max-w-md">
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <Link to="/">
@@ -41,13 +54,13 @@ export function SigninPage() {
           </Link>
         </div>
 
-        {/* Card */}
-        <Card className="bg-(--color-indigo-velvet-900) border-[var(--color-indigo-velvet-800)]">
+        {/* Card — Utilisation des variables sémantiques pour dark/light mode */}
+        <Card className="border-border bg-card shadow-lg">
           <CardHeader className="text-center pb-2">
-            <CardTitle className="text-2xl font-bold text-white">
+            <CardTitle className="text-2xl font-bold text-foreground">
               Bon retour dans votre espace
             </CardTitle>
-            <CardDescription className="text-white/60">
+            <CardDescription className="text-muted-foreground">
               Connectez-vous à votre compte et poursuivez votre apprentissage
             </CardDescription>
           </CardHeader>
@@ -56,7 +69,7 @@ export function SigninPage() {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Email */}
               <div className="space-y-3">
-                <Label htmlFor="email" className="text-white">
+                <Label htmlFor="email" className="text-foreground">
                   Email
                 </Label>
                 <Input
@@ -66,20 +79,17 @@ export function SigninPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="bg-[var(--color-indigo-velvet-800)] border-[var(--color-indigo-velvet-700)] text-white placeholder:text-white/40 focus-visible:ring-[var(--color-frozen-water-500)]"
+                  className="bg-secondary/50 border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
                 />
               </div>
 
               {/* Mot de passe */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password" className="text-white">
+                  <Label htmlFor="password" className="text-foreground">
                     Mot de passe
                   </Label>
-                  <a
-                    href="#"
-                    className="text-xs text-[var(--color-frozen-water-500)] hover:underline"
-                  >
+                  <a href="#" className="text-xs text-primary hover:underline">
                     Mot de passe oublié ?
                   </a>
                 </div>
@@ -91,12 +101,12 @@ export function SigninPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="bg-[var(--color-indigo-velvet-800)] border-[var(--color-indigo-velvet-700)] text-white placeholder:text-white/40 focus-visible:ring-[var(--color-frozen-water-500)] pr-10"
+                    className="bg-secondary/50 border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary pr-10"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
                   >
                     {showPassword ? (
                       <EyeOff className="h-4 w-4" />
@@ -107,11 +117,11 @@ export function SigninPage() {
                 </div>
               </div>
 
-              {/* Bouton principal */}
+              {/* Bouton principal — Couleur solide sans dégradé */}
               <Button
                 type="submit"
                 disabled={!isFormValid || isLoading}
-                className="w-full bg-white text-[var(--color-indigo-velvet-950)] hover:bg-white/90 font-medium"
+                className="w-full font-medium cursor-pointer"
               >
                 {isLoading ? "Connexion en cours..." : "Se connecter !"}
               </Button>
@@ -120,20 +130,20 @@ export function SigninPage() {
             {/* Séparateur */}
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-[var(--color-indigo-velvet-700)]" />
+                <span className="w-full border-t border-border" />
               </div>
               <div className="relative flex justify-center text-xs">
-                <span className="bg-[var(--color-indigo-velvet-900)] px-2 text-white/50">
+                <span className="bg-card px-2 text-muted-foreground">
                   Ou continuer avec
                 </span>
               </div>
             </div>
 
-            {/* Boutons de connexion sociale */}
+            {/* Boutons de connexion sociale — Utilisation des variables sémantiques */}
             <div className="grid grid-cols-3 gap-3">
               <Button
                 variant="outline"
-                className="bg-[var(--color-indigo-velvet-800)] border-[var(--color-indigo-velvet-700)] text-white hover:bg-[var(--color-indigo-velvet-700)]"
+                className="bg-secondary/50 border-border text-foreground hover:bg-secondary cursor-pointer"
               >
                 <svg
                   className="h-5 w-5"
@@ -145,7 +155,7 @@ export function SigninPage() {
               </Button>
               <Button
                 variant="outline"
-                className="bg-[var(--color-indigo-velvet-800)] border-[var(--color-indigo-velvet-700)] text-white hover:bg-[var(--color-indigo-velvet-700)]"
+                className="bg-secondary/50 border-border text-foreground hover:bg-secondary cursor-pointer"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24">
                   <path
@@ -168,7 +178,7 @@ export function SigninPage() {
               </Button>
               <Button
                 variant="outline"
-                className="bg-[var(--color-indigo-velvet-800)] border-[var(--color-indigo-velvet-700)] text-white hover:bg-[var(--color-indigo-velvet-700)]"
+                className="bg-secondary/50 border-border text-foreground hover:bg-secondary cursor-pointer"
               >
                 <svg
                   className="h-5 w-5"
@@ -181,11 +191,11 @@ export function SigninPage() {
             </div>
 
             {/* Lien vers inscription */}
-            <p className="text-center text-white/60 text-sm mt-6">
+            <p className="text-center text-muted-foreground text-sm mt-6">
               Vous n'avez pas de compte ?{" "}
               <Link
-                to="/inscription"
-                className="text-[var(--color-frozen-water-500)] hover:underline font-medium"
+                to="/register"
+                className="text-primary hover:underline font-medium"
               >
                 Créer un compte
               </Link>
@@ -194,19 +204,13 @@ export function SigninPage() {
         </Card>
 
         {/* Mention légale */}
-        <p className="text-center text-white/40 text-xs mt-6 px-4">
+        <p className="text-center text-muted-foreground/60 text-xs mt-6 px-4">
           En continuant, vous acceptez nos{" "}
-          <a
-            href="#"
-            className="text-[var(--color-frozen-water-500)] hover:underline"
-          >
+          <a href="#" className="text-primary hover:underline">
             Conditions d'utilisation
           </a>{" "}
           et notre{" "}
-          <a
-            href="#"
-            className="text-[var(--color-frozen-water-500)] hover:underline"
-          >
+          <a href="#" className="text-primary hover:underline">
             Politique de confidentialité
           </a>
           .

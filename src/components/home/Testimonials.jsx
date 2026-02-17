@@ -3,8 +3,8 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Martinez",
-    role: "Reconversion professionnelle",
+    name: "MOMEGOU Aurelie",
+    role: "Etudiante en Génie Logiciel ESMATA",
     title: "Un parcours qui a changé ma carrière",
     avatar:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
@@ -17,13 +17,13 @@ const testimonials = [
     ],
   },
   {
-    name: "Thomas Dubois",
+    name: "Edoa Yves",
     role: "Étudiant en école d'informatique",
-    title: "Enfin la pratique dont j'avais besoin",
+    title: "Enfin la pratique dont j'avais besoin, avec de véritable projet",
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
     quote:
-      "Les cours de la fac étaient trop théoriques. Avec Codecraft, j'ai enfin pu pratiquer sur de vrais projets et comprendre comment les concepts s'appliquent concrètement. La communauté est incroyablement active et bienveillante.",
+      "Les cours de l'école étaient trop théoriques. Avec Codecraft, j'ai enfin pu pratiquer sur de vrais projets et comprendre comment les concepts s'appliquent concrètement. La communauté est très active et bienveillante.",
     highlights: [
       "Apprentissage pratique",
       "Complémentarité avec les études",
@@ -31,13 +31,13 @@ const testimonials = [
     ],
   },
   {
-    name: "Amadou Konaté",
-    role: "Formateur en centre de formation",
+    name: "Kamdem Josapha",
+    role: "Directeur d'un centre de formation",
     title: "Un vrai game-changer pour nos formations",
     avatar:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face",
     quote:
-      "Nous avons intégré Codecraft dans notre parcours développeur web. L'engagement des apprenants a explosé : +45% de taux de complétion. Le tableau de bord nous permet d'intervenir rapidement quand quelqu'un est en difficulté.",
+      "Nous avons utilisé Codecraft pour notre parcours développeur web. Cette formation devient accessible a un plus grand nombre de personne, ce qui accroit nos CA. L'engagement des apprenants a explosé : +45% de taux de complétion. Le tableau de bord nous permet d'intervenir rapidement quand quelqu'un est ne travaille pas.",
     highlights: [
       "Taux de complétion amélioré",
       "Suivi en temps réel",
@@ -66,7 +66,7 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-background rounded-2xl p-8 border border-border shadow-sm hover:shadow-lg transition-all duration-300"
+              className="bg-background rounded-xl p-8 border border-border shadow-sm hover:shadow-lg transition-all duration-300"
             >
               {/* Étoiles — petite taille */}
               <div className="flex gap-0.5 mb-4">
