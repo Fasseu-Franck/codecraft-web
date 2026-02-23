@@ -9,6 +9,7 @@ import { SignupPage } from "@/src/pages/Signup";
 
 // Home page
 import { Contact } from "@/src/pages/Contact";
+import { Formations } from "@/src/pages/Formations";
 import { Home } from "@/src/pages/Home";
 import { HowItWorks } from "@/src/pages/HowItWorks";
 import { Pricing } from "@/src/pages/Pricing";
@@ -30,6 +31,9 @@ function App() {
 
           {/* Page Tarification */}
           <Route path="/tarifs" element={<Pricing />} />
+
+          {/* Bibliothèque des formations */}
+          <Route path="/formations" element={<Formations />} />
 
           {/* Page Contact */}
           <Route path="/contact" element={<Contact />} />
