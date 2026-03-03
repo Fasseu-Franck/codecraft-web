@@ -80,6 +80,14 @@
   --card-subtle-bg: #efecf9;
   --highlight-bg: #e5fff3;
   --highlight-text: #00994f;
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
 .dark {
@@ -117,6 +125,14 @@
   --card-subtle-bg: #120c27;
   --highlight-bg: #00331a;
   --highlight-text: #33ff9c;
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
 @theme inline {
@@ -144,14 +160,17 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Codecraft palette for Tailwind */
+  /* Codecraft palette for Tailwind — Basé sur codecraft-style.md */
   --color-frozen-water-50: var(--color-frozen-water-50);
   --color-frozen-water-500: var(--color-frozen-water-500);
   --color-frozen-water-600: var(--color-frozen-water-600);
+  --color-frozen-water-700: #00994f;
   --color-indigo-velvet-50: var(--color-indigo-velvet-50);
   --color-indigo-velvet-500: var(--color-indigo-velvet-500);
   --color-indigo-velvet-600: var(--color-indigo-velvet-600);
   --color-indigo-velvet-950: var(--color-indigo-velvet-950);
+  --color-soft-cyan-500: var(--color-soft-cyan-500);
+  --color-soft-cyan-600: #15b7b1;
 
   /* Semantic tokens for dark mode support */
   --color-badge-bg: var(--badge-bg);
@@ -159,6 +178,18 @@
   --color-card-subtle: var(--card-subtle-bg);
   --color-highlight-bg: var(--highlight-bg);
   --color-highlight-text: var(--highlight-text);
+
+  /* Sidebar transition */
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 68px;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
 }
 
 @layer base {

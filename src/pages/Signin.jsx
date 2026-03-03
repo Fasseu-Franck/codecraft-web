@@ -12,24 +12,45 @@ import {
 } from "@/src/components/ui/card";
 import { Input } from "@/src/components/ui/input";
 import { Label } from "@/src/components/ui/label";
+import { useAuth } from "@/src/features/auth/context/AuthContext";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export function SigninPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const { login, user } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Rediriger si déjà connecté
+  if (user) {
+    navigate("/dashboard", { replace: true });
+    return null;
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulation d'envoi du formulaire
-    setTimeout(() => {
+    setError("");
+
+    try {
+      // Utilisation du mock login via AuthContext
+      // Le champ "email" sert de nom d'utilisateur pour le mock
+      await login(email, password);
+      // Rediriger vers la page d'origine ou le dashboard
+      const from = location.state?.from?.pathname || "/dashboard";
+      navigate(from, { replace: true });
+    } catch (err) {
+      setError(err.message || "Identifiants incorrects");
+    } finally {
       setIsLoading(false);
-      console.log("Connexion:", { email, password });
-    }, 1500);
+    }
   };
 
   const isFormValid = email && password;
@@ -67,15 +88,23 @@ export function SigninPage() {
 
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Email */}
+              {/* Message d'erreur */}
+              {error && (
+                <div className="flex items-center gap-2 text-sm text-destructive bg-destructive/10 p-3 rounded-lg">
+                  <AlertCircle className="h-4 w-4 shrink-0" />
+                  {error}
+                </div>
+              )}
+
+              {/* Identifiant */}
               <div className="space-y-3">
                 <Label htmlFor="email" className="text-foreground">
-                  Email
+                  Identifiant
                 </Label>
                 <Input
                   id="email"
-                  type="email"
-                  placeholder="m@exemple.com"
+                  type="text"
+                  placeholder="Nom d'utilisateur"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -89,9 +118,12 @@ export function SigninPage() {
                   <Label htmlFor="password" className="text-foreground">
                     Mot de passe
                   </Label>
-                  <a href="#" className="text-xs text-primary hover:underline">
+                  <Link
+                    to="/mot-de-passe-oublie"
+                    className="text-xs text-primary hover:underline"
+                  >
                     Mot de passe oublié ?
-                  </a>
+                  </Link>
                 </div>
                 <div className="relative">
                   <Input
@@ -125,6 +157,15 @@ export function SigninPage() {
               >
                 {isLoading ? "Connexion en cours..." : "Se connecter !"}
               </Button>
+              {/* Indice mock — À retirer en production */}
+              <div className="text-center p-3 rounded-lg bg-secondary/50 border border-border">
+                <p className="text-xs text-muted-foreground">
+                  <span className="font-semibold">Test :</span> Identifiant :{" "}
+                  <code className="text-primary font-mono">root</code> — Mot de
+                  passe :{" "}
+                  <code className="text-primary font-mono">admin-cd</code>
+                </p>
+              </div>
             </form>
 
             {/* Séparateur */}
