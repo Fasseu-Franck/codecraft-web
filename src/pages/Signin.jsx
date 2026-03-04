@@ -14,7 +14,7 @@ import { Input } from "@/src/components/ui/input";
 import { Label } from "@/src/components/ui/label";
 import { useAuth } from "@/src/features/auth/context/AuthContext";
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export function SigninPage() {
@@ -29,10 +29,13 @@ export function SigninPage() {
   const location = useLocation();
 
   // Rediriger si déjà connecté
-  if (user) {
-    navigate("/dashboard", { replace: true });
-    return null;
-  }
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard", { replace: true });
+    }
+  }, [user, navigate]);
+
+  if (user) return null;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -96,15 +99,15 @@ export function SigninPage() {
                 </div>
               )}
 
-              {/* Identifiant */}
+              {/* Email */}
               <div className="space-y-3">
                 <Label htmlFor="email" className="text-foreground">
-                  Identifiant
+                  Email
                 </Label>
                 <Input
                   id="email"
-                  type="text"
-                  placeholder="Nom d'utilisateur"
+                  type="email"
+                  placeholder="test@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -157,15 +160,6 @@ export function SigninPage() {
               >
                 {isLoading ? "Connexion en cours..." : "Se connecter !"}
               </Button>
-              {/* Indice mock — À retirer en production */}
-              <div className="text-center p-3 rounded-lg bg-secondary/50 border border-border">
-                <p className="text-xs text-muted-foreground">
-                  <span className="font-semibold">Test :</span> Identifiant :{" "}
-                  <code className="text-primary font-mono">root</code> — Mot de
-                  passe :{" "}
-                  <code className="text-primary font-mono">admin-cd</code>
-                </p>
-              </div>
             </form>
 
             {/* Séparateur */}

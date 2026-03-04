@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
 import { Input } from "@/src/components/ui/input";
+import { SidebarTrigger } from "@/src/components/ui/sidebar";
 import { useAuth } from "@/src/features/auth/context/AuthContext";
 import {
   Bell,
@@ -46,8 +47,9 @@ export function DashboardHeader({ title = "Vue d'ensemble du centre" }) {
 
   return (
     <header className="sticky top-0 z-20 flex items-center justify-between h-16 px-6 border-b border-border bg-card/80 backdrop-blur-sm">
-      {/* Titre de la page */}
-      <div>
+      {/* Titre et trigger de la sidebar */}
+      <div className="flex items-center gap-3">
+        <SidebarTrigger className="-ml-2" />
         <h1 className="text-xl font-bold text-foreground">{title}</h1>
       </div>
 

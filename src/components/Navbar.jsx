@@ -62,16 +62,21 @@ export function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <ModeToggle />
-            <Link to="/login" className="cursor-pointer">
-              <Button variant="ghost" size="sm" className="rounded-full">
+            <Button variant="ghost" size="sm" className="rounded-full" asChild>
+              <Link to="/login" className="cursor-pointer">
                 Connexion
-              </Button>
-            </Link>
-            <Link to="/register" className="cursor-pointer">
-              <Button variant="default" size="sm" className="rounded-full">
+              </Link>
+            </Button>
+            <Button
+              variant="default"
+              size="sm"
+              className="rounded-full"
+              asChild
+            >
+              <Link to="/register" className="cursor-pointer">
                 S'inscrire
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button & Theme Toggle */}
@@ -111,16 +116,16 @@ export function Navbar() {
               );
             })}
             <div className="flex flex-col w-full gap-2 mt-2">
-              <Link to="/login" className="w-full">
-                <Button variant="outline" className="w-full rounded-full">
+              <Button variant="outline" className="w-full rounded-full" asChild>
+                <Link to="/login" className="w-full">
                   Connexion
-                </Button>
-              </Link>
-              <Link to="/register" className="w-full">
-                <Button variant="default" className="w-full rounded-full">
+                </Link>
+              </Button>
+              <Button variant="default" className="w-full rounded-full" asChild>
+                <Link to="/register" className="w-full">
                   S'inscrire
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

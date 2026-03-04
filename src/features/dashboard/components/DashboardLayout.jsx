@@ -1,41 +1,29 @@
-// Basé sur codecraft-archi.md — Couche de Présentation : Layout dashboard
-// Layout principal combinant sidebar + header + contenu
-// Conforme au design system (codecraft-style.md) avec support dark/light mode
+import { AppSidebar } from "@/src/components/app-sidebar";
+import { SidebarInset, SidebarProvider } from "@/src/components/ui/sidebar";
 import { TooltipProvider } from "@/src/components/ui/tooltip";
 import { DashboardHeader } from "@/src/features/dashboard/components/DashboardHeader";
-import { DashboardSidebar } from "@/src/features/dashboard/components/DashboardSidebar";
-import { cn } from "@/src/lib/utils";
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 export function DashboardLayout() {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-background">
-        {/* Sidebar */}
-        <DashboardSidebar
-          collapsed={sidebarCollapsed}
-          onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
-        />
+      <SidebarProvider>
+        <div className="flex min-h-screen bg-background w-full">
+          {/* Nouvelle Sidebar */}
+          <AppSidebar />
 
-        {/* Contenu principal — Adapte sa marge selon l'état de la sidebar */}
-        <div
-          className={cn(
-            "transition-all duration-300",
-            sidebarCollapsed ? "ml-[68px]" : "ml-[260px]",
-          )}
-        >
-          {/* Header */}
-          <DashboardHeader />
+          {/* Contenu principal inset */}
+          <SidebarInset className="flex-1 overflow-hidden">
+            {/* Header */}
+            <DashboardHeader />
 
-          {/* Zone de contenu — Outlet pour les routes imbriquées */}
-          <main className="p-6">
-            <Outlet />
-          </main>
+            {/* Zone de contenu — Outlet pour les routes imbriquées */}
+            <main className="p-6 overflow-auto bg-background flex-1">
+              <Outlet />
+            </main>
+          </SidebarInset>
         </div>
-      </div>
+      </SidebarProvider>
     </TooltipProvider>
   );
 }

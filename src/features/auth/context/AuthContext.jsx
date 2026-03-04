@@ -12,9 +12,9 @@ import {
 const MOCK_USERS = [
   {
     id: "1",
-    username: "root",
-    password: "admin-cd",
-    email: "admin@codecraft.dev",
+    username: "test@gmail.com",
+    password: "test-admin",
+    email: "test@gmail.com",
     nom: "Admin CF",
     role: "admin-cf",
     avatar: null,
