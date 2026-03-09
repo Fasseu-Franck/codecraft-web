@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-export function DashboardHeader({ title = "Vue d'ensemble du centre" }) {
+export function DashboardHeader({ title = "Dashboard" }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
