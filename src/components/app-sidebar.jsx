@@ -1,9 +1,15 @@
 "use client";
 
-import { BookOpen, LayoutDashboard, Settings, Users } from "lucide-react";
+import {
+  BookOpen,
+  CircleDollarSign,
+  GraduationCap,
+  LayoutDashboard,
+  Settings,
+  Users,
+} from "lucide-react";
 
 import { NavMain } from "@/src/components/nav-main";
-import { NavSecondary } from "@/src/components/nav-secondary";
 import { NavUser } from "@/src/components/nav-user";
 import {
   Sidebar,
@@ -27,7 +33,7 @@ export function AppSidebar({ ...props }) {
     },
     navMain: [
       {
-        title: "Tableau de Bord",
+        title: "Dashboard",
         url: "/dashboard",
         icon: LayoutDashboard,
         isActive: true,
@@ -36,58 +42,128 @@ export function AppSidebar({ ...props }) {
             title: "Vue d'ensemble",
             url: "/dashboard",
           },
+        ],
+      },
+      {
+        title: "Gestion Pédagogique",
+        url: "#",
+        icon: BookOpen,
+        items: [
           {
-            title: "Analytics",
-            url: "/dashboard/analytics",
+            title: "Parcours",
+            url: "/dashboard/parcours",
+          },
+          {
+            title: "Modules",
+            url: "/dashboard/modules",
+          },
+          {
+            title: "Sessions",
+            url: "/dashboard/sessions",
+          },
+          {
+            title: "Challenges",
+            url: "/dashboard/challenges",
+          },
+          {
+            title: "Projets",
+            url: "/dashboard/projets",
           },
         ],
       },
       {
-        title: "Apprenants & Formateurs",
+        title: "Cohortes",
+        url: "#",
+        icon: GraduationCap,
+        items: [
+          {
+            title: "Toutes les cohortes",
+            url: "/dashboard/cohortes",
+          },
+          {
+            title: "Créer une cohorte",
+            url: "/dashboard/cohortes/creer",
+          },
+          {
+            title: "Apprenants (Détail)",
+            url: "/dashboard/cohortes/apprenants",
+          },
+          {
+            title: "Annonces (Détail)",
+            url: "/dashboard/cohortes/annonces",
+          },
+          {
+            title: "Suivi (Détail)",
+            url: "/dashboard/cohortes/suivi",
+          },
+        ],
+      },
+      {
+        title: "Membres du centre",
         url: "#",
         icon: Users,
         items: [
           {
-            title: "Cohortes",
-            url: "/dashboard/cohortes",
-          },
-          {
-            title: "Base des Apprenants",
+            title: "Apprenants",
             url: "/dashboard/apprenants",
           },
           {
-            title: "Personnel Formateur",
+            title: "Formateurs",
             url: "/dashboard/formateurs",
           },
         ],
       },
       {
-        title: "Formation & Projets",
+        title: "Revenus",
         url: "#",
-        icon: BookOpen,
+        icon: CircleDollarSign,
         items: [
           {
-            title: "Catalogue de Formations",
-            url: "/dashboard/formations",
+            title: "Synthèse",
+            url: "/dashboard/revenus",
           },
           {
-            title: "Suivi des Projets",
-            url: "/dashboard/projets",
+            title: "Paiements reçus",
+            url: "/dashboard/revenus/recus",
+          },
+          {
+            title: "Paiements en attente",
+            url: "/dashboard/revenus/attente",
           },
         ],
       },
-    ],
-    navSecondary: [
       {
         title: "Paramètres",
-        url: "/dashboard/parametres",
+        url: "#",
         icon: Settings,
+        items: [
+          {
+            title: "Mon centre",
+            url: "/dashboard/parametres/centre",
+          },
+          {
+            title: "Utilisateurs du centre",
+            url: "/dashboard/parametres/utilisateurs",
+          },
+          {
+            title: "Facturation / Abonnement",
+            url: "/dashboard/parametres/facturation",
+          },
+        ],
       },
     ],
   };
 
   return (
-    <Sidebar variant="inset" {...props}>
+    <Sidebar
+      variant="sidebar"
+      className="border-r-0 bg-background! rounded-tr-4xl rounded-br-4xl overflow-hidden"
+      style={{
+        "--sidebar-background": "var(--background)",
+        "--sidebar": "var(--background)",
+      }}
+      {...props}
+    >
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -107,7 +183,6 @@ export function AppSidebar({ ...props }) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

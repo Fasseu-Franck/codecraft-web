@@ -6,7 +6,7 @@ import { AuthProvider } from "@/src/features/auth/context/AuthContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 
-// Auth pages — Basé sur codecraft-prd.md : Module d'Authentification
+// Auth pages
 import { ForgotPasswordPage } from "@/src/pages/ForgotPassword";
 import { ForgotPasswordConfirmationPage } from "@/src/pages/ForgotPasswordConfirmation";
 import { PasswordChangedPage } from "@/src/pages/PasswordChanged";
@@ -21,11 +21,24 @@ import { Home } from "@/src/pages/Home";
 import { HowItWorks } from "@/src/pages/HowItWorks";
 import { Pricing } from "@/src/pages/Pricing";
 
-// Dashboard — Basé sur codecraft-prd.md : Module Centres de Formation
+// Dashboard
 import { DashboardLayout } from "@/src/features/dashboard/components/DashboardLayout";
 import { PlaceholderPage } from "@/src/features/dashboard/components/PlaceholderPage";
 import { DashboardHome } from "@/src/features/dashboard/pages/admin-cf/DashboardHome";
 import { ProfileEdit } from "@/src/features/dashboard/pages/admin-cf/ProfileEdit";
+
+// Pages Pédagogiques
+import { ChallengesPage } from "@/src/features/dashboard/pages/admin-cf/ChallengesPage";
+import { ModulesPage } from "@/src/features/dashboard/pages/admin-cf/ModulesPage";
+import { ParcoursCreerPage } from "@/src/features/dashboard/pages/admin-cf/ParcoursCreerPage";
+import { ParcoursDetailPage } from "@/src/features/dashboard/pages/admin-cf/ParcoursDetailPage";
+import { ParcoursPage } from "@/src/features/dashboard/pages/admin-cf/ParcoursPage";
+import { ProjetsPage } from "@/src/features/dashboard/pages/admin-cf/ProjetsPage";
+import { SessionsPage } from "@/src/features/dashboard/pages/admin-cf/SessionsPage";
+
+// Pages Cohortes
+import { CohorteCreerPage } from "@/src/features/dashboard/pages/admin-cf/CohorteCreerPage";
+import { CohortesPage } from "@/src/features/dashboard/pages/admin-cf/CohortesPage";
 
 function App() {
   return (
@@ -58,16 +71,10 @@ function App() {
               element={<PasswordChangedPage />}
             />
 
-            {/* Pages comment ça marche */}
+            {/* Pages publiques */}
             <Route path="/comment-ca-marche" element={<HowItWorks />} />
-
-            {/* Page Tarification */}
             <Route path="/tarifs" element={<Pricing />} />
-
-            {/* Bibliothèque des formations */}
             <Route path="/formations" element={<Formations />} />
-
-            {/* Page Contact */}
             <Route path="/contact" element={<Contact />} />
 
             {/* Dashboard — Routes protégées avec RBAC */}
@@ -79,37 +86,65 @@ function App() {
                 </ProtectedRoute>
               }
             >
-              {/* Page d'accueil du dashboard */}
               <Route index element={<DashboardHome />} />
-
-              {/* Profil utilisateur */}
               <Route path="profil" element={<ProfileEdit />} />
 
-              {/* Pages placeholder pour les sections à développer */}
+              {/* Gestion Pédagogique */}
+              <Route path="parcours" element={<ParcoursPage />} />
+              <Route path="parcours/creer" element={<ParcoursCreerPage />} />
+              <Route path="parcours/:id" element={<ParcoursDetailPage />} />
+              <Route path="modules" element={<ModulesPage />} />
+              <Route path="sessions" element={<SessionsPage />} />
+              <Route path="challenges" element={<ChallengesPage />} />
+              <Route path="projets" element={<ProjetsPage />} />
+
+              {/* Cohortes */}
+              <Route path="cohortes" element={<CohortesPage />} />
+              <Route path="cohortes/creer" element={<CohorteCreerPage />} />
               <Route
-                path="cohortes"
+                path="cohortes/:id"
                 element={
                   <PlaceholderPage
-                    title="Gestion des Cohortes"
-                    description="Organisez vos apprenants en groupes et gérez les sessions de formation."
+                    title="Détail Cohorte"
+                    description="Gérez les apprenants, annonces et suivi de cette cohorte."
                   />
                 }
               />
               <Route
-                path="formations"
+                path="cohortes/apprenants"
                 element={
                   <PlaceholderPage
-                    title="Catalogue des Formations"
-                    description="Créez et gérez vos parcours de formation pédagogiques."
+                    title="Apprenants de la cohorte"
+                    description="Liste des inscrits et gestion des inscriptions."
                   />
                 }
               />
               <Route
-                path="projets"
+                path="cohortes/annonces"
                 element={
                   <PlaceholderPage
-                    title="Suivi des Projets"
-                    description="Suivez l'avancement des projets soumis par vos apprenants."
+                    title="Annonces de la cohorte"
+                    description="Publiez des communications pour cette cohorte."
+                  />
+                }
+              />
+              <Route
+                path="cohortes/suivi"
+                element={
+                  <PlaceholderPage
+                    title="Suivi de la cohorte"
+                    description="Progression collective et individuelle des apprenants."
+                  />
+                }
+              />
+
+              {/* Membres du centre */}
+              <Route
+                path="apprenants"
+                element={
+                  <PlaceholderPage
+                    title="Base des Apprenants"
+                    description="Consultez et gérez l'ensemble de vos apprenants inscrits."
                   />
                 }
               />
@@ -122,21 +157,61 @@ function App() {
                   />
                 }
               />
+
+              {/* Revenus */}
               <Route
-                path="apprenants"
+                path="revenus"
                 element={
                   <PlaceholderPage
-                    title="Base des Apprenants"
-                    description="Consultez et gérez l'ensemble de vos apprenants inscrits."
+                    title="Synthèse des Revenus"
+                    description="Vue globale des revenus par mois, cohorte et parcours."
                   />
                 }
               />
               <Route
-                path="analytics"
+                path="revenus/recus"
                 element={
                   <PlaceholderPage
-                    title="Analytics & Finances"
-                    description="Analysez les performances et gérez les aspects financiers."
+                    title="Paiements Reçus"
+                    description="Liste des transactions effectuées par les apprenants."
+                  />
+                }
+              />
+              <Route
+                path="revenus/attente"
+                element={
+                  <PlaceholderPage
+                    title="Paiements en attente"
+                    description="Suivi des impayés ou paiements en cours de validation."
+                  />
+                }
+              />
+
+              {/* Paramètres */}
+              <Route
+                path="parametres/centre"
+                element={
+                  <PlaceholderPage
+                    title="Mon Centre"
+                    description="Informations générales du centre : nom, logo, coordonnées, agrément."
+                  />
+                }
+              />
+              <Route
+                path="parametres/utilisateurs"
+                element={
+                  <PlaceholderPage
+                    title="Utilisateurs du Centre"
+                    description="Gestion des comptes admins et formateurs."
+                  />
+                }
+              />
+              <Route
+                path="parametres/facturation"
+                element={
+                  <PlaceholderPage
+                    title="Facturation / Abonnement"
+                    description="Configuration du mode de paiement et abonnement de la plateforme."
                   />
                 }
               />
@@ -146,6 +221,15 @@ function App() {
                   <PlaceholderPage
                     title="Paramètres"
                     description="Configurez les paramètres de votre centre de formation."
+                  />
+                }
+              />
+              <Route
+                path="analytics"
+                element={
+                  <PlaceholderPage
+                    title="Analytics & Finances"
+                    description="Analysez les performances et gérez les aspects financiers."
                   />
                 }
               />
