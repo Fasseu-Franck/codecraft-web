@@ -113,7 +113,7 @@ function Step2({ data, onChange }) {
                   {parcours.titre}
                 </h4>
                 <div
-                  className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ${
+                  className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
                     isSelected ? "border-primary bg-primary" : "border-border"
                   }`}
                 >
@@ -242,7 +242,7 @@ function FormateurCard({ formateur, isSelected, onClick }) {
       }`}
     >
       <div className="flex items-start gap-4">
-        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary font-bold">
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold">
           {formateur.initiales}
         </div>
         <div className="flex-1 min-w-0">
@@ -254,7 +254,7 @@ function FormateurCard({ formateur, isSelected, onClick }) {
               </p>
             </div>
             <div
-              className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ${
+              className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
                 isSelected ? "border-primary bg-primary" : "border-border"
               }`}
             >

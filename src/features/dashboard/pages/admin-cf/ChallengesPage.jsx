@@ -32,13 +32,13 @@ function ChallengeCard({ challenge, session, module: mod }) {
     <Card className="border border-border hover:border-primary/30 hover:shadow-md transition-all duration-200 bg-card">
       <CardHeader className="pb-3">
         <div className="flex items-start gap-3">
-          <div className="w-9 h-9 rounded-lg bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center flex-shrink-0">
+          <div className="w-9 h-9 rounded-lg bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center shrink-0">
             <Zap size={16} className="text-yellow-600 dark:text-yellow-400" />
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2 mb-0.5">
               <div
-                className="w-2 h-2 rounded-full flex-shrink-0"
+                className="w-2 h-2 rounded-full shrink-0"
                 style={{ backgroundColor: mod.couleur }}
               />
               <p className="text-xs text-muted-foreground truncate">
@@ -153,7 +153,7 @@ export function ChallengesPage() {
               className="rounded-xl border border-border bg-card p-4 flex items-center gap-3"
             >
               <div
-                className="w-3 h-12 rounded-full flex-shrink-0"
+                className="w-3 h-12 rounded-full shrink-0"
                 style={{ backgroundColor: mod.couleur }}
               />
               <div>

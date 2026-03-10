@@ -43,7 +43,7 @@ function SessionCard({ session, moduleCouleur, moduleNom }) {
       <CardHeader className="pb-3">
         <div className="flex items-start gap-3">
           <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+            className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
             style={{ backgroundColor: moduleCouleur + "20" }}
           >
             <BookOpen size={14} style={{ color: moduleCouleur }} />
@@ -90,7 +90,7 @@ function SessionCard({ session, moduleCouleur, moduleNom }) {
                   key={i}
                   className="text-xs text-foreground flex items-center gap-1.5"
                 >
-                  <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
+                  <div className="w-1 h-1 rounded-full bg-primary shrink-0" />
                   {ex}
                 </li>
               ))}
@@ -197,7 +197,7 @@ export function SessionsPage() {
               {/* Module header */}
               <div className="flex items-center gap-3 mb-4">
                 <div
-                  className="w-3 h-3 rounded-full flex-shrink-0"
+                  className="w-3 h-3 rounded-full shrink-0"
                   style={{ backgroundColor: module.couleur }}
                 />
                 <h3 className="text-base font-semibold text-foreground">

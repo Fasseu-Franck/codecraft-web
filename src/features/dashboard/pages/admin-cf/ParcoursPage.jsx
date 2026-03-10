@@ -117,7 +117,7 @@ function ParcoursCard({ parcours, onClick, onEdit }) {
               className="flex items-center gap-2 text-xs text-muted-foreground"
             >
               <div
-                className="w-2 h-2 rounded-full flex-shrink-0"
+                className="w-2 h-2 rounded-full shrink-0"
                 style={{ backgroundColor: m.couleur }}
               />
               <span className="truncate">{m.titre}</span>

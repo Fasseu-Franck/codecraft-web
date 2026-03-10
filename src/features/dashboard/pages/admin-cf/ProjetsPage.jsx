@@ -11,7 +11,7 @@ function MiniProjetCard({ module }) {
       <CardHeader className="pb-3">
         <div className="flex items-start gap-3">
           <div
-            className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+            className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
             style={{ backgroundColor: module.couleur + "20" }}
           >
             <Layers size={16} style={{ color: module.couleur }} />
@@ -75,7 +75,7 @@ function ProjetFinalCard({ parcours }) {
               >
                 <CheckCircle2
                   size={12}
-                  className="text-green-500 mt-0.5 flex-shrink-0"
+                  className="text-green-500 mt-0.5 shrink-0"
                 />
                 {l}
               </li>

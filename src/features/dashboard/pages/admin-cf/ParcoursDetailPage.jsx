@@ -44,7 +44,7 @@ function SessionItem({ session, modColor, sessionIndex }) {
         className="w-full flex items-center gap-3 p-3 hover:bg-secondary/40 transition-colors text-left"
       >
         <div
-          className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
+          className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
           style={{ backgroundColor: modColor }}
         >
           {sessionIndex + 1}
@@ -90,7 +90,7 @@ function SessionItem({ session, modColor, sessionIndex }) {
                   key={i}
                   className="flex items-center gap-2 text-xs text-muted-foreground"
                 >
-                  <Icon size={12} className="text-primary flex-shrink-0" />
+                  <Icon size={12} className="text-primary shrink-0" />
                   <span>{c.titre}</span>
                 </div>
               );
@@ -109,7 +109,7 @@ function SessionItem({ session, modColor, sessionIndex }) {
                     key={i}
                     className="text-xs text-muted-foreground flex items-center gap-1.5"
                   >
-                    <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
+                    <div className="w-1 h-1 rounded-full bg-primary shrink-0" />
                     {ex}
                   </li>
                 ))}
@@ -155,7 +155,7 @@ function ModuleSection({ module, moduleIndex }) {
         className="w-full flex items-center gap-4 p-4 hover:bg-secondary/30 transition-colors text-left"
       >
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+          className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0"
           style={{ backgroundColor: module.couleur }}
         >
           {moduleIndex + 1}
@@ -370,7 +370,7 @@ export function ParcoursDetailPage() {
                       key={i}
                       className="text-xs text-muted-foreground flex items-start gap-2"
                     >
-                      <div className="w-1 h-1 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                      <div className="w-1 h-1 rounded-full bg-primary mt-1.5 shrink-0" />
                       {p}
                     </li>
                   ))}
@@ -398,7 +398,7 @@ export function ParcoursDetailPage() {
                       >
                         <CheckCircle2
                           size={12}
-                          className="text-green-500 mt-0.5 flex-shrink-0"
+                          className="text-green-500 mt-0.5 shrink-0"
                         />
                         {o}
                       </li>
@@ -436,7 +436,7 @@ export function ParcoursDetailPage() {
                       >
                         <CheckCircle2
                           size={11}
-                          className="text-green-500 mt-0.5 flex-shrink-0"
+                          className="text-green-500 mt-0.5 shrink-0"
                         />
                         {l}
                       </li>

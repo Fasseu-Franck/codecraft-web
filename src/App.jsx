@@ -40,6 +40,9 @@ import { SessionsPage } from "@/src/features/dashboard/pages/admin-cf/SessionsPa
 import { CohorteCreerPage } from "@/src/features/dashboard/pages/admin-cf/CohorteCreerPage";
 import { CohortesPage } from "@/src/features/dashboard/pages/admin-cf/CohortesPage";
 
+// Prévisualisation
+import { ParcoursPreviewPage } from "@/src/features/dashboard/pages/admin-cf/ParcoursPreviewPage";
+
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -92,6 +95,10 @@ function App() {
               {/* Gestion Pédagogique */}
               <Route path="parcours" element={<ParcoursPage />} />
               <Route path="parcours/creer" element={<ParcoursCreerPage />} />
+              <Route
+                path="parcours/previsualiser"
+                element={<ParcoursPreviewPage />}
+              />
               <Route path="parcours/:id" element={<ParcoursDetailPage />} />
               <Route path="modules" element={<ModulesPage />} />
               <Route path="sessions" element={<SessionsPage />} />

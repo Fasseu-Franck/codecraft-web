@@ -23,6 +23,7 @@ import {
   Check,
   CheckCircle2,
   Clock,
+  Eye,
   GripVertical,
   Layers,
   Monitor,
@@ -224,7 +225,7 @@ function ListEditor({ label, items, onAdd, onRemove, placeholder }) {
             key={i}
             className="flex items-center gap-2 bg-secondary/40 rounded-lg px-3 py-2 border border-border"
           >
-            <Check size={13} className="text-primary flex-shrink-0" />
+            <Check size={13} className="text-primary shrink-0" />
             <span className="text-sm text-foreground flex-1">{item}</span>
             <button
               onClick={() => onRemove(i)}
@@ -424,7 +425,7 @@ function Step3({ data, onChange }) {
                     >
                       <CheckCircle2
                         size={13}
-                        className="text-green-500 flex-shrink-0 mt-0.5"
+                        className="text-green-500 shrink-0 mt-0.5"
                       />
                       {l}
                     </li>
@@ -564,7 +565,7 @@ function Step4({ data, onChange }) {
               >
                 <div className="flex items-center gap-3">
                   <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                     style={{ backgroundColor: m.couleur + "20" }}
                   >
                     <Layers size={13} style={{ color: m.couleur }} />
@@ -737,12 +738,17 @@ export function ParcoursCreerPage() {
             <ArrowRight size={15} />
           </Button>
         ) : (
+          // Bouton Prévisualiser en rouge — la publication se fait sur la page de prévisualisation
           <Button
-            onClick={handlePublish}
-            className="gap-2 bg-green-600 hover:bg-green-700"
+            onClick={() =>
+              navigate("/dashboard/parcours/previsualiser", {
+                state: { formData },
+              })
+            }
+            className="gap-2 bg-red-600 hover:bg-red-700 text-white"
           >
-            <CheckCircle2 size={15} />
-            Publier le parcours
+            <Eye size={15} />
+            Prévisualiser
           </Button>
         )}
       </div>

@@ -72,7 +72,7 @@ function CohorteCard({ cohorte, onClick }) {
         {/* Parcours associé */}
         {parcours && (
           <div className="flex items-center gap-2 text-sm">
-            <BookOpen size={13} className="text-primary flex-shrink-0" />
+            <BookOpen size={13} className="text-primary shrink-0" />
             <span className="text-muted-foreground truncate">
               {parcours.titre}
             </span>
@@ -82,7 +82,7 @@ function CohorteCard({ cohorte, onClick }) {
         {/* Formateur */}
         {formateur && (
           <div className="flex items-center gap-2 text-sm">
-            <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-[9px] font-bold text-primary flex-shrink-0">
+            <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-[9px] font-bold text-primary shrink-0">
               {formateur.initiales}
             </div>
             <span className="text-muted-foreground truncate">
@@ -93,7 +93,7 @@ function CohorteCard({ cohorte, onClick }) {
 
         {/* Dates */}
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
-          <CalendarDays size={12} className="flex-shrink-0" />
+          <CalendarDays size={12} className="shrink-0" />
           <span>
             {dateD} → {dateF}
           </span>
