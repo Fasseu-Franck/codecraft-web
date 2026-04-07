@@ -13,14 +13,10 @@ Lire tous les fichiers .md fournis dans l’application avant de commencer à g�
 
 Respecter scrupuleusement les instructions, styles, composants et règles mentionnés dans ces fichiers.
 
-Générer du code propre, testé et structuré, qui ne ressemble pas à du code IA dans l'interface compatible avec la stack du projet (React, Vue, Node, etc., selon contexte).
+Générer du code propre, testé et structuré, qui ne ressemble pas à du code IA dans l'interface compatible avec la stack du projet.
 
 Ne jamais inventer de fonctionnalités non documentées dans les .md.
 Eviter les degrades sur les boutons et texte car cela fait interface graphique concu avec l'IA
-
-Toujours indiquer quelles parties du code sont basées sur quel fichier .md (ex : // Basé sur docs/hero.md).
-
-Si un fichier .md contient des exemples de code, les adapter et les intégrer correctement dans la structure finale.
 
 Inclure des commentaires pour expliquer comment chaque partie du code respecte la documentation.
 
@@ -29,7 +25,6 @@ Si une instruction n’est pas claire, poser d’abord des questions avant de g�
 Format attendu :
 
 Code prêt à l’usage avec commentaires clairs
-
-Référence aux fichiers .md utilisés
+Le code doit etre bien indente de tels sorte que a gauche on a les balises sans le contenu de facon a etre bien lu
 
 Respect strict du style, de la structure et des composants mentionnés dans la documentation

@@ -1,4 +1,3 @@
-// Basé sur task-1.md - Section 2: HERO SECTION
 import heroImage from "@/src/assets/home/Working-Dark.jpg";
 import { Button } from "@/src/components/ui/button";
 import { CheckCircle2, Rocket, BookOpen } from "lucide-react";

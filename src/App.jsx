@@ -43,6 +43,9 @@ import { CohortesPage } from "@/src/features/dashboard/pages/admin-cf/CohortesPa
 // Prévisualisation
 import { ParcoursPreviewPage } from "@/src/features/dashboard/pages/admin-cf/ParcoursPreviewPage";
 
+// Membres du centre
+import { TrainersPage } from "@/src/features/dashboard/pages/admin-cf/TrainersPage";
+
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -157,12 +160,7 @@ function App() {
               />
               <Route
                 path="formateurs"
-                element={
-                  <PlaceholderPage
-                    title="Personnel Formateur"
-                    description="Gérez votre équipe de formateurs et mentors."
-                  />
-                }
+                element={<TrainersPage />}
               />
 
               {/* Revenus */}
